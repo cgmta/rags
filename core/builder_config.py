@@ -9,12 +9,12 @@ import os
 from llama_index.llms import OpenAI
 
 # set OpenAI Key - use Streamlit secrets
-os.environ["OPENAI_API_KEY"] = st.secrets.openai_key
+#os.environ["OPENAI_API_KEY"] = st.secrets.openai_key
 # load LLM
-BUILDER_LLM = OpenAI(model="gpt-3.5-turbo")
+#BUILDER_LLM = OpenAI(model="gpt-3.5-turbo")
 
 # # Anthropic (make sure you `pip install anthropic`)
-# from llama_index.llms import Anthropic
+from llama_index.llms import Anthropic
 # # set Anthropic key
-# os.environ["ANTHROPIC_API_KEY"] = st.secrets.anthropic_key
-# BUILDER_LLM = Anthropic()
+os.environ["ANTHROPIC_API_KEY"] = st.secrets.anthropic_key
+BUILDER_LLM = Anthropic()
